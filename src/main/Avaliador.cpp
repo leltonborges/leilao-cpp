@@ -1,13 +1,22 @@
 #include "Avaliador.h"
 
-void Avaliador::avaliar(const Leilao& leilao) {
+void Avaliador::avaliar(const Leilao &leilao) {
     std::vector<Lance> lances = leilao.recuperaLances();
-    for (const Lance& l: lances) {
-        if(l.recuperaValor() > this->maiorValor)
-            this->maiorValor = l.recuperaValor();
+    this->maxValue = lances.begin()->recuperaValor();
+    this->minValue = lances.begin()->recuperaValor();
+
+    for (const Lance &l: lances) {
+        if (l.recuperaValor() > this->maxValue)
+            this->maxValue = l.recuperaValor();
+        else if (l.recuperaValor() < this->minValue)
+            this->minValue = l.recuperaValor();
     }
 }
 
-float Avaliador::getMaiorValor() const {
-    return this->maiorValor;
+float Avaliador::getMaxValue() const {
+    return this->maxValue;
+}
+
+float Avaliador::getMinValue() const {
+    return this->minValue;
 }

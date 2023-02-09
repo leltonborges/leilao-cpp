@@ -6,11 +6,13 @@
 
 class Avaliador {
 private:
-    float maiorValor;
+    float maxValue;
+    float minValue;
 
 public:
     void avaliar(const Leilao&);
-    [[nodiscard]] float getMaiorValor() const;
+    [[nodiscard]] float getMaxValue() const;
+    [[nodiscard]] float getMinValue() const;
 };
 
 #endif
