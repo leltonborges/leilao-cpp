@@ -10,7 +10,7 @@ private:
 
 public:
     void avaliar(const Leilao&);
-    float getMaiorValor() const;
+    [[nodiscard]] float getMaiorValor() const;
 };
 
 #endif

@@ -1,8 +1,11 @@
 #include "Avaliador.h"
 
 void Avaliador::avaliar(const Leilao& leilao) {
-    Lance lance = leilao.recuperaLances().back();
-    this->maiorValor = lance.recuperaValor();
+    std::vector<Lance> lances = leilao.recuperaLances();
+    for (const Lance& l: lances) {
+        if(l.recuperaValor() > this->maiorValor)
+            this->maiorValor = l.recuperaValor();
+    }
 }
 
 float Avaliador::getMaiorValor() const {
