@@ -1,5 +1,3 @@
-#define CATCH_CONFIG_MAIN
-
 #include "../main/Avaliador.h"
 #include "catch2.h"
 
@@ -38,17 +36,4 @@ static Leilao getLeiloes() {
     leilao.recebeLance(lance3);
     leilao.recebeLance(lance4);
     return leilao;
-}
-
-TEST_CASE("Não dever recebe lance consecutivos do mesmo usuário") {
-    Leilao leilao("Fiat 147 0KM");
-    Usuario user("Beutrano");
-    Lance lance1(user, 1000);
-    Lance lance2(user, 1500);
-
-    leilao.recebeLance(lance1);
-    leilao.recebeLance(lance2);
-
-    REQUIRE(1 == leilao.recuperaLances().size());
-    REQUIRE(1000 == leilao.recuperaLances().back().recuperaValor());
 }

@@ -5,11 +5,12 @@
 
 class Usuario {
 private:
-    std::string nome;
+    std::string name;
 public:
     explicit Usuario(std::string);
 
-    [[nodiscard]] std::string recuperaNome() const;
+    [[nodiscard]] std::string getName() const;
+    [[nodiscard]] std::string getFirstName() const;
 };
 
-#endif /* Usuario_hpp */
+#endif

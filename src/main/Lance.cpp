@@ -12,5 +12,5 @@ float Lance::recuperaValor() const {
 }
 
 std::string Lance::getUserName() const {
-    return this->usuario.recuperaNome();
+    return this->usuario.getName();
 }

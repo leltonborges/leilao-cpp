@@ -3,4 +3,4 @@ project(leilao)
 
 set(CMAKE_CXX_STANDARD 23)
 
-add_executable(leilao src/main/Lance.cpp src/main/Leilao.cpp src/main/Usuario.cpp src/main/Leilao.hpp src/main/Lance.hpp src/main/Usuario.hpp src/main/Avaliador.cpp src/main/Avaliador.h src/test/test-avalidor.cpp src/test/catch2.h)
+add_executable(leilao src/main/Lance.cpp src/main/Leilao.cpp src/main/Usuario.cpp src/main/Leilao.hpp src/main/Lance.hpp src/main/Usuario.hpp src/main/Avaliador.cpp src/main/Avaliador.h src/test/test-avalidor.cpp src/test/catch2.h src/test/test-leilao.cpp src/test/main-test.cpp src/test/test-user.cpp)
