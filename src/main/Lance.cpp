@@ -10,3 +10,7 @@ Lance::Lance(Usuario usuario, float valor):
 float Lance::recuperaValor() const {
     return valor;
 }
+
+std::string Lance::getUserName() const {
+    return this->usuario.recuperaNome();
+}

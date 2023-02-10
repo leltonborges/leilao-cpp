@@ -17,5 +17,11 @@ const std::vector<Lance> &Leilao::recuperaLances() const {
 }
 
 void Leilao::recebeLance(const Lance &lance) {
-    lances.push_back(lance);
+    if (lances.empty() || !compareUserLastLance(lance))
+        lances.push_back(lance);
+
+}
+
+bool Leilao::compareUserLastLance(const Lance &lance) {
+    return lances.back().getUserName() == lance.getUserName();
 }
