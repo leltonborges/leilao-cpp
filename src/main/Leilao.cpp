@@ -1,6 +1,11 @@
 #include "Leilao.hpp"
 
+#include <iostream>
 #include <utility>
+
+Leilao::Leilao() {
+    std::cout << "Criando leilão" << std::endl;
+}
 
 Leilao::Leilao(std::string descricao):
         descricao(std::move(descricao)) {

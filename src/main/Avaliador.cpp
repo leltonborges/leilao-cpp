@@ -2,15 +2,11 @@
 
 void Avaliador::avaliar(const Leilao &leilao) {
     std::vector<Lance> lances = leilao.recuperaLances();
-    this->maxValue = lances.begin()->recuperaValor();
-    this->minValue = lances.begin()->recuperaValor();
 
-    for (const Lance &l: lances) {
-        if (l.recuperaValor() > this->maxValue)
-            this->maxValue = l.recuperaValor();
-        else if (l.recuperaValor() < this->minValue)
-            this->minValue = l.recuperaValor();
-    }
+    std::sort(lances.begin(), lances.end(), ordeLance);
+    this->lancesOrderAsc = lances;
+    this->minValue = lances.begin()->recuperaValor();
+    this->maxValue = lances.back().recuperaValor();
 }
 
 float Avaliador::getMaxValue() const {
@@ -19,4 +15,12 @@ float Avaliador::getMaxValue() const {
 
 float Avaliador::getMinValue() const {
     return this->minValue;
+}
+
+std::vector<Lance> Avaliador::getLancesOrderAsc() const {
+    return this->lancesOrderAsc;
+}
+
+bool Avaliador::ordeLance(const Lance &lance1, const Lance &lance2) {
+    return lance1.recuperaValor() < lance2.recuperaValor();
 }

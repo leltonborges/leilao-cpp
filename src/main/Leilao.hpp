@@ -10,6 +10,7 @@ private:
     std::vector<Lance> lances{};
     std::string descricao{};
 public:
+Leilao();
     explicit Leilao(std::string descricao);
 
     [[nodiscard]] const std::vector<Lance> &recuperaLances() const;
