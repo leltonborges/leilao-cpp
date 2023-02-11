@@ -5,10 +5,10 @@
 
 using namespace std;
 
-void *operator new(size_t bytes) {
+/*void *operator new(size_t bytes) {
     cout << "Alocado " << bytes << " Bytes" << endl;
     return std::malloc(bytes);
-}
+}*/
 
 void showNameUser(const std::unique_ptr<Usuario> user){
     cout << "Show Name user: " << user->getName() << endl;
@@ -18,7 +18,7 @@ void showNameUser(const std::shared_ptr<Usuario> user){
     cout << "Show Name user: " << user->getName() << endl;
 }
 
-int main() {
+int main2() {
     std::cout << "---------------" << endl;
     std::string fulano = "Fulano Acala de Tal beutrano & Ciclano da Abete das canvas";
     std::string_view beutrano(fulano.c_str(), fulano.find('&') - 1);
