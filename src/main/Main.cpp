@@ -50,8 +50,8 @@ public:
     explicit User(const String &string):
             name(string) {}
 
-    explicit User(const String &&string):
-            name((String &&) string) {}
+    explicit User(String &&string):
+            name(std::move(string)) {}
 };
 
 void showNameUser(const std::unique_ptr<Usuario> user) {
@@ -84,6 +84,6 @@ int main() {
     getNumber() = 78;
     std::cout << "Number: " << getNumber() << std::endl;
 
-    User(String("Fulano de tal"));
+    User mv(String("Fulano de tal"));
     return 0;
 }
